@@ -204,7 +204,7 @@ assign(StyleSheet.prototype, {
   },  
   rules() {
     if(!isBrowser) {
-      return this.sheet.cssRules
+      return this.sheet ? this.sheet.cssRules : []
     }
     let arr = []
     this.tags.forEach(tag => arr.splice(arr.length, 0, ...Array.from(
